@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy] :set_user
+  # :set_contact, only: [:show, :edit, :update, :destroy] 
+  before_action :set_user
 
   # GET /contacts
   # GET /contacts.json
@@ -16,6 +17,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    4.times{@contact.phones.build}
   end
 
   # GET /contacts/1/edit
@@ -29,7 +31,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to user_contacts_path(@user, @contact), notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
