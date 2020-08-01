@@ -61,5 +61,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'thin', '~> 1.6'
-gem 'faye', '~> 1.1'
+gem 'faye', '~> 1.4'
 gem 'render_sync', '~> 0.5.0'
